@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1758648082128
+current_stage: None
+description: null
+last_updated_timestamp: 1758648082128
+name: movielens_ctr_ab
+run_id: 2b5d610593d74238a15ffb9e13b3533c
+run_link: null
+source: file:///C:/Users/sun/Desktop/abtest-mlflow-movielens/mlruns/924824668210327473/2b5d610593d74238a15ffb9e13b3533c/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///C:/Users/sun/Desktop/abtest-mlflow-movielens/mlruns/924824668210327473/2b5d610593d74238a15ffb9e13b3533c/artifacts/model
+user_id: null
+version: 2

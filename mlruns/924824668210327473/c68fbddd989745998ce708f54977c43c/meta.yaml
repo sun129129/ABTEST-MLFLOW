@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/sun/Desktop/abtest-mlflow-movielens/mlruns/924824668210327473/c68fbddd989745998ce708f54977c43c/artifacts
+end_time: 1758647468181
+entry_point_name: ''
+experiment_id: '924824668210327473'
+lifecycle_stage: active
+run_id: c68fbddd989745998ce708f54977c43c
+run_name: Curves_PR_ROC_Calib_Lift
+run_uuid: c68fbddd989745998ce708f54977c43c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758647466739
+status: 3
+tags: []
+user_id: sun

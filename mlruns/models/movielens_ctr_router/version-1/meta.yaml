@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1758648126569
+current_stage: None
+description: null
+last_updated_timestamp: 1758648126569
+name: movielens_ctr_router
+run_id: 4d0a9a5ea7e442219cb58620e2788cba
+run_link: null
+source: file:///C:/Users/sun/Desktop/abtest-mlflow-movielens/mlruns/924824668210327473/4d0a9a5ea7e442219cb58620e2788cba/artifacts/ab_router
+status: READY
+status_message: null
+storage_location: file:///C:/Users/sun/Desktop/abtest-mlflow-movielens/mlruns/924824668210327473/4d0a9a5ea7e442219cb58620e2788cba/artifacts/ab_router
+user_id: null
+version: 1

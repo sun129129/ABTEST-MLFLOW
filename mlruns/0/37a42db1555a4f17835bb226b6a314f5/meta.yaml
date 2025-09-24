@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/37a42db1555a4f17835bb226b6a314f5/artifacts
+end_time: 1758650001557
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 37a42db1555a4f17835bb226b6a314f5
+run_name: Router_Demo
+run_uuid: 37a42db1555a4f17835bb226b6a314f5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758650001480
+status: 4
+tags: []
+user_id: sun

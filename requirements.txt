@@ -1,0 +1,18 @@
+mlflow==2.14.1
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.2
+pyarrow==15.0.2
+matplotlib==3.9.2
+deepctr-torch==0.2.9
+fastapi
+uvicorn
+
+
+
+# pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cpu
+# pip install torch==2.4.1
+
+# pip install lightgbm==4.5.0
+# src/train_lgbm.py 추가
+# eval_offline_ab.py의 B모델 부분을 LightGBM으로 평가하도록 변경

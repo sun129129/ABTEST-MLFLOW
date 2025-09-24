@@ -1,0 +1,75 @@
+abtest-mlflow-movielens/
+│
+├── data/                           # MovieLens 원본 + 전처리 데이터
+│   ├── ml-1m.zip
+│   ├── ml-100k.zip
+│   └── processed/                  # prepare_movielens.py 실행 후 저장됨
+│
+├── src/
+│   ├── prepare_movielens.py        # 데이터 전처리
+│   ├── features.py                 # 피처 생성 함수
+│   ├── train_logreg.py             # Policy A 학습 (로지스틱)
+│   ├── train_lgbm.py               # Policy B 학습 (LightGBM)
+│   ├── eval_offline_ab.py          # 오프라인 A/B 평가 (전체 비교)
+│   ├── eval_curves.py              # ROC/PR 곡선 등 시각화
+│   ├── eval_segments.py            # 세그먼트별 성능 비교
+│   ├── eval_cv.py                  # K-Fold 교차검증 결과
+│   ├── register_models.py          # A/B 모델 Registry 등록(alias=PolicyA, PolicyB)
+│   ├── ab_router_pyfunc.py         # Router 모델(pyfunc, schema 포함)   ✅
+│   ├── ab_router_register.py       # Router 모델 Registry 등록(alias=router)
+│   └── utils.py                    # 공통 유틸 함수
+│
+├── mlruns/                         # MLflow 실험 로그 저장소
+├── mlflow.db                       # SQLite 기반 MLflow backend store
+├── requirements.txt
+└── README.md
+
+
+# 1) 데이터 준비
+python src/prepare_movielens.py
+
+# 2) 개별 모델 학습 (A: Logistic, B: LightGBM)
+python src/train_logreg.py
+python src/train_lgbm.py
+
+# 3) 오프라인 AB 평가 + 시각화
+python src/eval_offline_ab.py     # A/B 테스트셋 성능 비교 + 막대그래프
+python src/eval_curves.py         # ROC/PR/Calibration/Lift
+python src/eval_segments.py       # cold-start/인기/장르별 비교
+python src/eval_cv.py             # K-fold 분산(박스플롯)
+
+# 4) Router(pyfunc) 등록 (스키마 포함)
+python src/ab_router_pyfunc.py
+
+# 5) Registry 등록 + alias 부여
+python src/register_models.py       # movielens_ctr_ab → alias: PolicyA, PolicyB
+python src/ab_router_register.py    # movielens_ctr_router → alias: router
+
+# 6) 🔎 Router 동작 데모 (A/B 배정과 score 확인)
+python src/router_infer_demo.py
+
+
+🎯 ABTEST 이론이 들어간 지점
+
+Tracking:
+→ A와 B(두 모델)의 성능을 동일한 데이터셋에서 비교. (정량적 평가지표 기반 → 오프라인 A/B Test 느낌)
+
+Model Registry:
+→ PolicyA, PolicyB 두 모델을 버전 태깅으로 명시. 이것이 실제로 A/B Test 환경에서 “두 정책이 병렬로 존재한다”는 구조를 반영.
+
+Router(pyfunc):
+→ 실제 A/B Test “배분” 역할.
+예: user_id % 2 == 0 → PolicyA, user_id % 2 == 1 → PolicyB
+여기서 ABTEST의 트래픽 분리 원리가 구현됨.
+
+즉, ABTEST = Tracking + Registry + Router
+
+Tracking → 성능 기록
+
+Registry → 모델 버전 관리
+
+Router → 실제 배분/할당
+
+
+
+

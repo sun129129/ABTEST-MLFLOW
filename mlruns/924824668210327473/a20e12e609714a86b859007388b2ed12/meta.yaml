@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/sun/Desktop/abtest-mlflow-movielens/mlruns/924824668210327473/a20e12e609714a86b859007388b2ed12/artifacts
+end_time: 1758647055918
+entry_point_name: ''
+experiment_id: '924824668210327473'
+lifecycle_stage: active
+run_id: a20e12e609714a86b859007388b2ed12
+run_name: PolicyA_LogReg
+run_uuid: a20e12e609714a86b859007388b2ed12
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758646474962
+status: 3
+tags: []
+user_id: sun

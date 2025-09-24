@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/sun/Desktop/abtest-mlflow-movielens/mlruns/924824668210327473/1b54478ecd0546d6b76072b252e0c034/artifacts
+end_time: 1758647968464
+entry_point_name: ''
+experiment_id: '924824668210327473'
+lifecycle_stage: active
+run_id: 1b54478ecd0546d6b76072b252e0c034
+run_name: CV_5fold
+run_uuid: 1b54478ecd0546d6b76072b252e0c034
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758647490858
+status: 3
+tags: []
+user_id: sun
